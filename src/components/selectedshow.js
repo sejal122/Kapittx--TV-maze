@@ -54,9 +54,9 @@ export default function Selectedshow() {
   return (
     <div className="box">
       <div className="row">
-        <div className="col-sm-5">
+        <div className="col-sm-10 col-mg-12">
           <img
-            className="img"
+            className="img-fluid img"
             src={
               (img != null) | " " | "null"
                 ? img
@@ -74,7 +74,7 @@ export default function Selectedshow() {
             )}
           </div>
         </div>
-        <div className="col-sm-6">
+        <div className="col-sm-5 col-12 col-md-12">
           <h1>{show.name}</h1>
           <div className="details">Type: {show.type} </div>
           <div className="details">Language: {show.language}</div>
@@ -127,10 +127,12 @@ export default function Selectedshow() {
             </div>
           </div>
           <br />
+          <div className="row">
+            <div className="summary col-10 col-md-6 ">
+              {ReactHtmlParser(String(show.summary))}
+            </div>
+          </div>
 
-          <span className="summary">
-            {ReactHtmlParser(String(show.summary))}
-          </span>
           <div className="schedule">
             <div id="label">
               schedule : <b>{time} </b>
@@ -176,17 +178,26 @@ export default function Selectedshow() {
               ) : (
                 <h6>Sorry, no ratings available!</h6>
               )}
-            </div>      
-            <a href={prevEpisode}>
-              <button type="button" className="btn btn-info">
-                <ArrowBackIosIcon style={{ fontSize: 15 }} /> Previous episode
-              </button>
-            </a>
-            <a href={prevEpisode}>
-              <button type="button" className="btn btn-info">
-                Next episode <ArrowForwardIosIcon style={{ fontSize: 15 }} />
-              </button>
-            </a>
+            </div>
+            <div className="row episodes">
+              <div className="col-12 col-sm-12 col-md-12 col-xl-6">
+                <a href={prevEpisode}>
+                  <button type="button" className="btn btn-info">
+                    <ArrowBackIosIcon style={{ fontSize: 15 }} /> Previous
+                    episode
+                  </button>
+                </a>
+              </div>
+              <div className="col-12 col-sm-12 col-md-12 col-xl-6 ">
+                {" "}
+                <a href={prevEpisode}>
+                  <button type="button" className="btn btn-info">
+                    Next episode{" "}
+                    <ArrowForwardIosIcon style={{ fontSize: 15 }} />
+                  </button>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
