@@ -22,7 +22,7 @@ export default function Allshows() {
         {tvload.map((show, key) => {
           return (
             <Link
-              className="link card mx-auto col-sm-12 col-md-5 col-lg-5 col-xl-5"
+              className="link card mx-auto col-10 col-sm-10 col-md-10 col-lg-5 col-xl-5"
               to={`/show/${show.show.id}`}
             >
               <div key={show.show.id}>
