@@ -54,7 +54,7 @@ export default function Selectedshow() {
   return (
     <div className="box">
       <div className="row">
-        <div className="col-sm-10 col-mg-12">
+        <div className="col-sm-10">
           <img
             className="img-fluid img"
             src={
